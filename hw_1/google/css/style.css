@@ -1,0 +1,173 @@
+body {
+    display: block;
+    margin: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-wrapper .header {
+    display: flex;
+    height: 48px;
+    justify-content: flex-end;
+    padding: 6px;
+}
+
+.content-wrapper .header .navigation {
+    font-family: arial, sans-serif;
+    color: rgba(0, 0, 0, 0.836);
+    display: flex;
+    align-items: center;
+}
+
+.content-wrapper .header .navigation .navigation-link {
+    font: 13px/27px Roboto, Arial, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(0, 0, 0, .87);
+    font-weight: 400;
+    padding-left: 15px;
+    text-decoration-color: rgba(0, 0, 0, 0.87);
+}
+
+.content-wrapper .header .navigation .navigation-link:visited {
+    cursor: pointer;
+    color: rgba(0, 0, 0, .87);
+    text-decoration: none;
+}
+
+.content-wrapper .search-logo__wrapper {
+    max-height: 290px;
+    height: calc(100vh - 560px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-wrapper .search-logo__wrapper .search-logo {
+    max-height: 92px;
+    position: relative;
+    height: 100%;
+    margin-top: auto;
+}
+
+.content-wrapper .search-logo__wrapper .search-logo img {
+    height: 92px;
+    width: 272px;
+    overflow: clip;
+}
+
+.content-wrapper .search-controller {
+    display: flex;
+    padding: 26px 20px 20px 20px;
+    flex-direction: column;
+}
+
+.content-wrapper .search-controller .search-controller__input {
+    display: flex;
+
+    z-index: 3;
+    height: 46px;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    margin: 0 auto;
+    width: 638px;
+    max-width: 584px;
+    /* padding: 5px 8px 0 14px; */
+}
+
+.content-wrapper .search-controller .search-controller__input:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+
+.content-wrapper .search-controller .search-controller__input .input-form {
+    resize: none;
+    background-color: transparent;
+    border: none;
+    margin: 0 0 0 1px;
+    padding: 0;
+    color: rgba(0, 0, 0, .87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 16px;
+    flex: 100%;
+    font-family: arial, sans-serif;
+    line-height: 22px;
+    overflow-x: hidden;
+}
+
+.content-wrapper .search-controller .input-form__wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.content-wrapper .search-controller .search-controller__input .search-icon {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    height: 46px;
+    padding-left: 14px;
+}
+
+.content-wrapper .search-controller .search-controller__input .search-icon svg {
+    height: 20px;
+    line-height: 20px;
+    fill: #9aa0a6;
+    width: 20px;
+}
+
+.content-wrapper .search-controller .search-controller__input .on-screen-keyboard-icon {
+    background: url(//www.gstatic.com/inputtools/images/tia.png) no-repeat center;
+    height: 44px;
+    cursor: pointer;
+    width: 46px;
+    vertical-align: middle;
+}
+
+.content-wrapper .search-controller .search-controller__input .voice-search-icon {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    outline: none;
+    padding: 0 8px;
+    width: 24px;
+    line-height: 44px;
+}
+
+.content-wrapper .search-controller .search-controller__input .voice-search-icon svg {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.content-wrapper .search-controller .search-controller__input .search-by-image-icon {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    outline: none;
+    padding: 0 16px 0 8px;
+    width: 24px;
+    line-height: 44px;
+}
+
+.content-wrapper .search-controller .search-controller__input .search-by-image-icon svg {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
