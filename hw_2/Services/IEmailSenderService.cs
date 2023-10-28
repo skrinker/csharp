@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebServer
+namespace WebServer.Services
 {
-    public class AppSettings
+    internal interface IEmailSenderService
     {
-        public string Address { get; set; }
-        public string Port { get; set; }
+        Task sendEmail(string email, string data);
     }
 }
