@@ -13,8 +13,4 @@
     <None Remove="static\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\TemplateEngine\" />
-  </ItemGroup>
-
 </Project>
