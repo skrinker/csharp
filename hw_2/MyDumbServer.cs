@@ -4,40 +4,49 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using WebServer.AccountsController;
+using WebServer.Attributes;
+using WebServer.Services;
 
-namespace ShizaEbannaya
+namespace WebServer
 {
     class MyDumbServer
     {
-        private readonly string _rootDirectory;
-        private readonly string _defaultPage;
         private readonly int _port;
         private DumbLogging _log;
-        public MyDumbServer(string rootDirectory, string defaultPage, int port)
+        public MyDumbServer(int port)
         {
-            _rootDirectory = rootDirectory;
-            _defaultPage = defaultPage;
             _port = port;
             _log = new DumbLogging();
         }
 
         public void Start()
         {
+            var emailSenderService = new EmailSenderService();
+            emailSenderService.sendEmailWithAttachment("asdadas", "asdasdas", "asdasd", "sadasd", "sadadasd");
             using (var listener = new HttpListener())
             {
                 listener.Prefixes.Add($"http://localhost:{_port}/");
                 listener.Start();
                 _log.successLog($"Server is running on http://localhost:{_port}/");
-
+                var staticHandler = new StaticHandler();
+                var acc = new HttpControllerAttribute();
+                staticHandler.SetNext(new MethodsHandler());
                 while (true)
                 {
                     var context = listener.GetContext();
                     var request = context.Request;
                     var response = context.Response;
-
-                    var handler = new RequestHandler(_rootDirectory, _defaultPage);
-
-                    handler.handleRequest(request, response);
+                    
+                    var result = staticHandler.Handle(request, response);
+                    
+                    if (result != null)
+                    {
+                        _log.infoLog($"Successfully handled request {request.Url}");
+                    } else
+                    {
+                        _log.failureLog($"Error request {request.Url}");
+                    }
                 }
             }
         }

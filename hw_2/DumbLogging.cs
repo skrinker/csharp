@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShizaEbannaya
+namespace WebServer
 {
     class DumbLogging
     {
         private void reset() 
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Black;
         }
         public void successLog(string message)
         {
@@ -22,14 +21,14 @@ namespace ShizaEbannaya
 
         public void failureLog(string message)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{DateTime.Now.ToLocalTime()} | {message}");
             reset();
         }
 
         public void infoLog(string message)
         {
-            Console.BackgroundColor = ConsoleColor.White; 
+            Console.ForegroundColor = ConsoleColor.White; 
             Console.WriteLine($"{DateTime.Now.ToLocalTime()} | {message}");
             reset();
         }
