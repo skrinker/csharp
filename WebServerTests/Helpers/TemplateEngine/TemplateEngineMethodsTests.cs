@@ -19,5 +19,14 @@ namespace WebServer.Helpers.TemplateEngine.Tests
 
             Assert.AreEqual(expected, methods.SubstituteString("Hello @{var}", "World"));
         }
+
+        [TestMethod()]
+        public void SubstituteObjectTest()
+        {
+            var methods = new TemplateEngineMethods();
+            string expected = "Hello World";
+            Assert.AreEqual(expected, methods.SubstituteObject("Hello @{var}", "World"));
+
+        }
     }
 }

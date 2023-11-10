@@ -15,5 +15,17 @@ namespace WebServer.Helpers.TemplateEngine
             string pattern = @"@\{([a-zA-Z]+)\}";
             return Regex.Replace(input, pattern, replacement);
         }
+
+        public string SubstituteObject(string input, object model)
+        {
+            string pattern = @"@\{([a-zA-Z]+)\}";
+            var buffer = Regex.Match(input, pattern);
+            while (buffer != null)
+            {
+                Console.WriteLine(buffer);
+                buffer = buffer.NextMatch();
+            }
+            return "";
+        }
     }
 }
