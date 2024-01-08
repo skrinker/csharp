@@ -1,5 +1,3 @@
-# semestrovka 1
+# Домашки
 developer: Биктагиров Булат Дамирович
-
-link-1: 
-link-2: 
+ 
